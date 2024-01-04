@@ -54,15 +54,19 @@ const computerScoreDisplay = document.getElementById("opponent-score");
 const rockButton = document.querySelector("[data-rock]");
 const paperButton = document.querySelector("[data-paper]");
 const scissorsButton = document.querySelector("[data-scissors]");
+const modalWindow = document.querySelector(".modal-container");
 const modal = document.getElementById("modal");
-const tryAgain = document.getElementById("try-again");
+const overlay = document.getElementById("overlay");
+const tryAgainButton = document.getElementById("try-again");
 
 rockButton.addEventListener("click", () => game("rock"));
 paperButton.addEventListener("click", () => game("paper"));
 scissorsButton.addEventListener("click", () => game("scissors"));
+tryAgainButton.addEventListener("click", () => restartGame());
 
 function game(playerSelection) {
   if (gameOver()) {
+    openModal();
     return;
   }
   const computerSelection = computerChoice();
@@ -71,6 +75,7 @@ function game(playerSelection) {
   displayScore();
 
   if (gameOver()) {
+    openModal();
     endGameMessage();
   }
 }
@@ -116,6 +121,28 @@ function endGameMessage() {
   if (playerScore === 5) {
     modal.textContent = "Congrats! You have won the game!";
   } else if (computerScore === 5) {
-    modal.textContent = "Nice try! The opponent has won the game!";
+    modal.textContent = "Nice try! You have lost the game!";
   }
+}
+
+function openModal() {
+  modalWindow.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closeModal() {
+  modalWindow.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+function restartGame() {
+  playerScore = 0;
+  computerScore = 0;
+  winner = "";
+  playerScoreDisplay.textContent = `Player: ${playerScore}`;
+  computerScoreDisplay.textContent = `Opponent: ${computerScore}`;
+  resultScore.textContent = "First to 5 points wins!";
+  playerChoiceSelect.textContent = "~";
+  computerChoiceSelect.textContent = "~";
+  closeModal();
 }

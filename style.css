@@ -77,7 +77,7 @@ header {
   background-color: rgb(70, 70, 247);
 }
 
-.modal.active {
+.modal-container.active {
   transform: translate(-50%, -50%) scale(1);
 }
 
@@ -89,9 +89,10 @@ header {
 
 .try-again {
   background-color: rgb(70, 70, 247);
+  color: white;
 }
 
-#overlay {
+.overlay {
   position: fixed;
   opacity: 0;
   top: 0;
@@ -103,7 +104,7 @@ header {
   transition: 200ms ease-in-out;
 }
 
-#overlay.active {
+.overlay.active {
   opacity: 1;
   pointer-events: all;
 }

@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(0, 76, 163);
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  border: 1px solid black;
+  background-color: rgb(0, 0, 119);
+}
+
+.message {
+  text-align: center;
+}
+
+.output {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.player-choice,
+.opponent-choice {
+  margin: 10px;
+  min-width: 10vh;
+  text-align: center;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: minmax(200px, auto);
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.choices > button {
+  background-color: rgb(70, 70, 247);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-height: 100px;
+  margin: 10px;
+}

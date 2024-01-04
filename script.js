@@ -67,6 +67,10 @@ function game(playerSelection) {
   playRound(playerSelection, computerSelection);
   displayUpdate(playerSelection, computerSelection);
   displayScore();
+
+  if (gameOver()) {
+    endGameMessage();
+  }
 }
 
 function displayUpdate(playerSelection, computerSelection) {
@@ -103,5 +107,13 @@ function displayScore() {
   } else if (winner === "computer") {
     resultScore.textContent = "You Lost!";
     computerScoreDisplay.textContent = `Opponent: ${computerScore}`;
+  }
+}
+
+function endGameMessage() {
+  if (playerScore === 5) {
+    resultScore.textContent = "Congrats! You have won the game!";
+  } else if (computerScore === 5) {
+    resultScore.textContent = "Nice try! The opponent has won the game!";
   }
 }

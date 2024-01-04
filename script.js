@@ -54,6 +54,8 @@ const computerScoreDisplay = document.getElementById("opponent-score");
 const rockButton = document.querySelector("[data-rock]");
 const paperButton = document.querySelector("[data-paper]");
 const scissorsButton = document.querySelector("[data-scissors]");
+const modal = document.getElementById("modal");
+const tryAgain = document.getElementById("try-again");
 
 rockButton.addEventListener("click", () => game("rock"));
 paperButton.addEventListener("click", () => game("paper"));
@@ -112,8 +114,8 @@ function displayScore() {
 
 function endGameMessage() {
   if (playerScore === 5) {
-    resultScore.textContent = "Congrats! You have won the game!";
+    modal.textContent = "Congrats! You have won the game!";
   } else if (computerScore === 5) {
-    resultScore.textContent = "Nice try! The opponent has won the game!";
+    modal.textContent = "Nice try! The opponent has won the game!";
   }
 }

@@ -28,6 +28,11 @@ header {
   justify-content: center;
 }
 
+#player-info,
+#computer-info {
+  text-align: center;
+}
+
 .player-choice,
 .opponent-choice {
   margin: 10px;

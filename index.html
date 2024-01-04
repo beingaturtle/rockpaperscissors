@@ -4,7 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1 class="title">Rock, Paper, Scissors!</h1>
+    </header>
+
+    <div class="scores">
+      <div class="message">
+        <h3 class="result-message">Choose Rock, Paper, or Scissors</h3>
+        <h3 class="result-score">First to 5 points wins!</h3>
+      </div>
+
+      <div class="output">
+        <div data-player-choice class="player-choice">
+          8=D
+          <div class="score" id="player-score">Player: 0</div>
+        </div>
+        <div data-opponent-choice class="opponent-choice">
+          8=D
+          <div class="score" id="opponent-score">Opponent: 0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="choices">
+      <button data-rock>Rock</button>
+      <button data-paper>Paper</button>
+      <button data-scissors>Scissors</button>
+    </div>
+  </body>
 </html>

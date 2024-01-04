@@ -57,12 +57,12 @@ const scissorsButton = document.querySelector("[data-scissors]");
 const modalWindow = document.querySelector(".modal-container");
 const modal = document.getElementById("modal");
 const overlay = document.getElementById("overlay");
-const tryAgainButton = document.getElementById("try-again");
+const playAgainButton = document.getElementById("play-again");
 
 rockButton.addEventListener("click", () => game("rock"));
 paperButton.addEventListener("click", () => game("paper"));
 scissorsButton.addEventListener("click", () => game("scissors"));
-tryAgainButton.addEventListener("click", () => restartGame());
+playAgainButton.addEventListener("click", () => restartGame());
 
 function game(playerSelection) {
   if (gameOver()) {

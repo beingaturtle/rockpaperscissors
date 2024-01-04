@@ -39,6 +39,7 @@ header {
   margin: 10px;
   min-width: 10vh;
   text-align: center;
+  font-size: 50px;
 }
 
 .choices {
@@ -57,6 +58,7 @@ header {
   cursor: pointer;
   min-height: 100px;
   margin: 10px;
+  font-size: 40px;
 }
 
 .modal-container {
@@ -112,14 +114,10 @@ header {
 
 @media screen and (max-width: 429px) {
   .choices {
-    grid-template-columns: repeat(3, 100px);
+    grid-template-columns: repeat(3, 120px);
   }
 
-  .choices > button {
-    min-width: 80px;
-  }
-
-  header {
+  .choices header {
     width: 100%;
     text-align: center;
   }
